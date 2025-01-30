@@ -4,7 +4,7 @@ Rust library to manage processes.
 
 ## Features
 
-![sans-io](../sans-io.svg)
+![sans-io](https://raw.githubusercontent.com/pimalaya/process/refs/heads/master/sans-io.svg)
 
 ## Sponsoring
 

@@ -1,3 +1,7 @@
+//! # Flows
+//!
+//! Module dedicated to I/O-free, iterable state machine flows.
+
 #[path = "spawn-then-wait.rs"]
 mod spawn_then_wait;
 #[path = "spawn-then-wait-with-output.rs"]
