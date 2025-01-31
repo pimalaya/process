@@ -6,17 +6,17 @@ authors = ["soywod <clement.douin@posteo.net>"]
 edition = "2021"
 license = "MIT"
 categories = []
-keywords = ["process", "command", "spawn", "pipeline", "sans-io"]
-homepage = "https://pimalaya.org/"
-documentation = "https://docs.rs/process-lib/latest/process_lib/"
-repository = "https://github.com/pimalaya/process/"
+keywords = ["process", "command", "spawn", "io-free", "sans-io"]
+homepage = "https://pimalaya.org"
+documentation = "https://docs.rs/process-lib/latest/process_lib"
+repository = "https://github.com/pimalaya/process"
 
 [package.metadata.docs.rs]
 all-features = true
 rustdoc-args = ["--cfg", "docsrs", "--document-private-items"]
 
 [features]
-default = ["serde"]
+default = []
 serde = ["dep:serde"]
 
 [dev-dependencies]

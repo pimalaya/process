@@ -1,3 +1,8 @@
+//! # De/serialization
+//!
+//! Module dedicated to [`serde`] de/serialization of
+//! [`crate::Command`].
+
 use std::fmt;
 
 use serde::{

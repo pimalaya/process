@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- The library has totally been refactored as well as its API. The core library `process-lib` exposes now I/O-free flows. All I/O-related code has moved to dedicated repositories like `process-std` or `process-tokio`. Cargo features have been removed, except for the `serde` one that allows you to de/serialize a command from/to a string/list of string.
+
 ## [1.0.0] - 2024-10-27
 
 ### Added

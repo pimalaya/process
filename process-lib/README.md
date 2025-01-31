@@ -1,8 +1,8 @@
-# process-lib [![Matrix](https://img.shields.io/matrix/pimalaya:matrix.org?color=success&label=chat)](https://matrix.to/#/#pimalaya:matrix.org)
+# ⚙ process-lib [![Matrix](https://img.shields.io/matrix/pimalaya:matrix.org?color=success&label=chat)](https://matrix.to/#/#pimalaya:matrix.org)
 
-Rust library to manage processes.
+I/O-free Rust library to manage processes.
 
-## Features
+*See the project documentation on [github.com](https://github.com/pimalaya/process#-process-) and the full API documentation on [docs.rs](https://docs.rs/process-lib/latest/process_lib/).*
 
 ![sans-io](https://raw.githubusercontent.com/pimalaya/process/refs/heads/master/sans-io.svg)
 
