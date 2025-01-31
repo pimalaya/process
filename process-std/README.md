@@ -1,12 +1,8 @@
-# process-std [![Matrix](https://img.shields.io/matrix/pimalaya:matrix.org?color=success&label=chat)](https://matrix.to/#/#pimalaya:matrix.org)
+# ⚙ process-std [![Matrix](https://img.shields.io/matrix/pimalaya:matrix.org?color=success&label=chat)](https://matrix.to/#/#pimalaya:matrix.org)
 
 Standard, blocking I/O connector for `process-lib`.
 
-*🚧 Work in progress, stay tuned! 🚧*
-
-## Features
-
-![sans-io](../sans-io.svg)
+*See the project documentation on [github.com](https://github.com/pimalaya/process#-process-), the full API documentation on [docs.rs](https://docs.rs/process-std/latest/process_std/) and examples at [`examples/`](https://github.com/pimalaya/process/tree/master/process-std/examples).*
 
 ## Sponsoring
 

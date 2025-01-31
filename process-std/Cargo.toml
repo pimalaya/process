@@ -1,15 +1,15 @@
 [package]
 name = "process-std"
 description = "Standard, blocking I/O connector for process-lib"
-version = "0.1.0"
+version = "1.0.0"
 authors = ["soywod <clement.douin@posteo.net>"]
 edition = "2021"
 license = "MIT"
-categories = []
-keywords = []
-homepage = "https://pimalaya.org/"
-documentation = "https://docs.rs/process-lib/latest/process_lib/"
-repository = "https://github.com/pimalaya/process/"
+categories = ["api-bindings"]
+keywords = ["process", "command", "spawn", "std", "blocking"]
+homepage = "https://pimalaya.org"
+documentation = "https://docs.rs/process-std/latest/process_std"
+repository = "https://github.com/pimalaya/process"
 
 [package.metadata.docs.rs]
 rustdoc-args = ["--cfg", "docsrs"]
