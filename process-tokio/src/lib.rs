@@ -7,15 +7,21 @@ use process_lib::{Command, Io, State};
 use tokio::process::Command as TokioCommand;
 use tracing::instrument;
 
+/// The Tokio-based, async I/O connector.
+///
+/// This connector makes use of the Tokio module [`tokio::process`] to
+/// spawn processes and wait for exit status or output.
 #[derive(Debug, Default)]
 pub struct Connector;
 
 impl Connector {
+    /// Creates a new connector.
     #[instrument(skip_all)]
     pub fn new() -> Self {
         Self::default()
     }
 
+    /// Executes the given `io` for the given `flow`.
     #[instrument(skip_all)]
     pub async fn execute<F: AsMut<State>>(&self, flow: &mut F, io: Io) -> Result<()> {
         let state = flow.as_mut();
@@ -26,6 +32,11 @@ impl Connector {
         }
     }
 
+    /// Spawns a process then wait for its child's exit status.
+    ///
+    /// This function builds a [`tokio::process::Command`] from the
+    /// flow's command builder, spawns a process, collects
+    /// std{in,out,err} then wait for the exit status.
     #[instrument(skip_all)]
     async fn spawn_then_wait(&self, state: &mut State) -> Result<()> {
         let Some(builder) = state.take_command_builder() else {
@@ -43,6 +54,11 @@ impl Connector {
         Ok(())
     }
 
+    /// Spawns a process then wait for its child's output.
+    ///
+    /// This function builds a [`tokio::process::Command`] from the
+    /// flow's command builder, spawns a process, then wait for the
+    /// output.
     #[instrument(skip_all)]
     async fn spawn_then_wait_with_output(&self, state: &mut State) -> Result<()> {
         let Some(builder) = state.take_command_builder() else {
@@ -56,6 +72,7 @@ impl Connector {
     }
 }
 
+/// Maps a [`process_lib::Command`] to a [`tokio::process::Command`].
 #[instrument(skip_all)]
 fn build_command(builder: Command) -> TokioCommand {
     let mut command = TokioCommand::new(builder.program);

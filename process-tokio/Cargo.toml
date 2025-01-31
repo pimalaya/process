@@ -1,15 +1,15 @@
 [package]
 name = "process-tokio"
 description = "Tokio-based, async I/O connector for process-lib"
-version = "0.1.0"
+version = "1.0.0"
 authors = ["soywod <clement.douin@posteo.net>"]
 edition = "2021"
 license = "MIT"
-categories = []
-keywords = []
-homepage = "https://pimalaya.org/"
-documentation = "https://docs.rs/process-tokio/latest/process_tokio/"
-repository = "https://github.com/pimalaya/process/"
+categories = ["api-bindings", "asynchronous"]
+keywords = ["process", "command", "spawn", "tokio", "async"]
+homepage = "https://pimalaya.org"
+documentation = "https://docs.rs/process-tokio/latest/process_tokio"
+repository = "https://github.com/pimalaya/process"
 
 [package.metadata.docs.rs]
 rustdoc-args = ["--cfg", "docsrs"]
