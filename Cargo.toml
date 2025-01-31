@@ -1,12 +1,8 @@
 [workspace]
 resolver = "2"
-members = [
-  "process-lib",
-  "process-std",
-  "process-tokio",
-]
+members = ["lib", "std", "tokio"]
 
 [patch.crates-io]
-process-lib.path = "./process-lib"
-process-std.path = "./process-std"
-process-tokio.path = "./process-tokio"
+process-lib.path = "./lib"
+process-std.path = "./std"
+process-tokio.path = "./tokio"

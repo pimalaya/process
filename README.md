@@ -32,9 +32,9 @@ let output = flow.output()
 
 ## Structure
 
-- [`process-lib`](https://github.com/pimalaya/process/tree/master/process-lib): a set of I/O-free tools to deal with processes
-- [`process-std`](https://github.com/pimalaya/process/tree/master/process-std): a standard, blocking I/O connector for `process-lib`
-- [`process-tokio`](https://github.com/pimalaya/process/tree/master/process-tokio): Tokio-based, async I/O connector for `process-lib`
+- [`process-lib`](https://github.com/pimalaya/process/tree/master/lib): a set of I/O-free tools to deal with processes
+- [`process-std`](https://github.com/pimalaya/process/tree/master/std): a standard, blocking I/O connector for `process-lib`
+- [`process-tokio`](https://github.com/pimalaya/process/tree/master/tokio): Tokio-based, async I/O connector for `process-lib`
 
 ## Examples
 
