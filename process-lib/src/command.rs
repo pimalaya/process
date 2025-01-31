@@ -193,3 +193,21 @@ impl Command {
         self
     }
 }
+
+impl PartialEq for Command {
+    fn eq(&self, other: &Self) -> bool {
+        if self.program != other.program {
+            return false;
+        }
+
+        if self.args != other.args {
+            return false;
+        }
+
+        if self.current_dir != other.current_dir {
+            return false;
+        }
+
+        true
+    }
+}

@@ -4,6 +4,8 @@
 mod command;
 mod flow;
 mod io;
+#[cfg(feature = "serde")]
+mod serde;
 mod state;
 
 #[doc(inline)]
