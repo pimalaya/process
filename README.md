@@ -1,26 +1,40 @@
-# process [![Matrix](https://img.shields.io/matrix/pimalaya:matrix.org?color=success&label=chat)](https://matrix.to/#/#pimalaya:matrix.org)
+# ⚙ process [![Matrix](https://img.shields.io/matrix/pimalaya:matrix.org?color=success&label=chat)](https://matrix.to/#/#pimalaya:matrix.org)
 
 Set of Rust libraries to manage processes.
 
 ## Why?
 
-As a library, *it is hard to design a generic API around code that depends on I/O*. This project aims to:
+Designing a generic API for a library *that relies on I/O* is a real challenge. This project tries to solve that matter by abstracting away the I/O:
 
-- Provide "flows" with I/O abstracted away using state machine and `Iterator`.
-- Provide few I/O connectors by default, in dedicated crates to avoid cargo features hell.
-- Provide a simple API to build your own I/O connector.
-- Make flows and I/O connector plug easily together.
+- The core lib exposes I/O-free, composable and iterable state machines (named flows)
+- The I/O connector executes I/O everytime a flow `Iterator` produces an I/O request
+
+```rust
+let mut flow = Flow::new()
+let conn = IoConnector::new();
+
+while let Some(io) = flow.next() {
+    conn.execute(&mut flow, io)?;
+}
+
+let output = flow.output()
+```
 
 ![sans-io](./sans-io.svg)
 
-*See [docs.rs](https://docs.rs/process-lib/latest/process_lib/) for the complete API documentation.*
+## When?
 
-## Available connectors
+✔ If you develop a library that relies on processes, then `process-lib` might help you.
 
-- [`process-std`](https://github.com/pimalaya/process/tree/master/process-std): Standard, blocking I/O connector
-- [`process-tokio`](https://github.com/pimalaya/process/tree/master/process-tokio): Tokio-based, async I/O connector
+✔ If you develop an application that uses `process-lib` flows, any I/O connector might help you. If you do not find the right built-in connector matching your needs, you can easily build your own. PRs are welcomed!
 
-You can build your own I/O connector in case you miss yours. PRs are also welcomed!
+✘ If you develop an application *without* `process-lib`, then this project *might not* help you. Just use directly the process module matching your environment (`std::process`, `tokio::process` etc).
+
+## Structure
+
+- [`process-lib`](https://github.com/pimalaya/process/tree/master/process-lib): a set of I/O-free tools to deal with processes
+- [`process-std`](https://github.com/pimalaya/process/tree/master/process-std): a standard, blocking I/O connector for `process-lib`
+- [`process-tokio`](https://github.com/pimalaya/process/tree/master/process-tokio): Tokio-based, async I/O connector for `process-lib`
 
 ## Examples
 
