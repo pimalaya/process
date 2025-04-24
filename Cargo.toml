@@ -1,0 +1,32 @@
+[package]
+name = "io-process"
+description = "Set of I/O-free coroutines and runtimes to manage processes"
+version = "1.0.0"
+authors = ["soywod <clement.douin@posteo.net>"]
+edition = "2021"
+license = "MIT"
+categories = ["api-bindings"]
+keywords = ["io-free", "coroutine", "runtime", "process", "thread"]
+homepage = "https://pimalaya.org"
+documentation = "https://docs.rs/io-process/latest/io_process"
+repository = "https://github.com/pimalaya/io-process"
+
+[package.metadata.docs.rs]
+all-features = true
+rustdoc-args = ["--cfg", "docsrs"]
+
+[features]
+default = []
+std = []
+tokio = ["dep:tokio"]
+serde = ["dep:serde"]
+
+[dev-dependencies]
+env_logger = "0.11"
+tempdir = "0.3"
+tokio = { version = "1", features = ["full"] }
+
+[dependencies]
+log = "0.4"
+serde = { version = "1", optional = true }
+tokio = { version = "1", default-features = false, features = ["process"], optional = true }
